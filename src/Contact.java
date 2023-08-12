@@ -12,14 +12,13 @@ public class Contact {
         }
     }
 
-    public String searchByName(String name) {
-        String phone = contactBook.get(name);
-        if (contactBook.containsValue(name)) {
-            System.out.println(contactBook.get(phone) + " - " + phone);
+    public int searchByName(String name) {
+        int result = Integer.parseInt(contactBook.get(name));
+        if (name != null) {
+            System.out.println(contactBook.get(result) + " - " + result);
         } else {
             System.out.println("Contact not found :((");
-        }
-        return phone;
+        } return result;
     }
     public void searchByPhone(Integer phone){
         for (Map.Entry<Integer,String> entry: contactBook.entrySet()){

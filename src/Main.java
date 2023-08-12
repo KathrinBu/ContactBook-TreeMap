@@ -2,12 +2,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+    try {
+    Contact contactBook=new Contact();
 
-        Contact contactBook=new Contact();
+    contactBook.addContact(8900000,"Mas");
+    contactBook.addContact(95746321,"Boris");
+    contactBook.addContact(392871,"Gas");
+    contactBook.getAllContacts();
+    contactBook.searchByPhone(8900000);
+    contactBook.searchByName("Gas");
 
-        contactBook.addContact(8900000,"Mas");
-        contactBook.addContact(95746321,"Boris");
-        contactBook.addContact(392871,"Gas");
+    } catch (Exception e) {
+    System.out.println("!!!nevernyi vvod!!!");
+    }
+
 
 
 //        Scanner scanner=new Scanner(System.in);
