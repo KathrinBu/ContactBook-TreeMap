@@ -13,20 +13,22 @@ public class Contact {
     }
 
     public int searchByName(String name) {
-        int result = Integer.parseInt(contactBook.get(name));
-        if (name != null) {
-            System.out.println(contactBook.get(result) + " - " + result);
-        } else {
-            System.out.println("Contact not found :((");
-        } return result;
+        for (Map.Entry<Integer,String> entry: contactBook.entrySet()) {
+            if(entry.getValue().equals(name))
+                return entry.getKey();
+        }
+        return -1;
     }
-    public void searchByPhone(Integer phone){
-        for (Map.Entry<Integer,String> entry: contactBook.entrySet()){
+    public String searchByPhone(Integer phone){
+      /*  for (Map.Entry<Integer,String> entry: contactBook.entrySet()){
             if (entry.getValue() == String.valueOf(phone)){
                 System.out.println(entry.getKey()+" - "+phone);
             }
-        }  System.out.println("Contact not found :((");
-
+        }  System.out.println("Contact not found :((");*/
+        if(contactBook.containsKey(phone))
+            return contactBook.get(phone);
+        else
+            return "абонент неизвестен";
     }
     public void getAllContacts() {
         for (Map.Entry<Integer, String> entry : contactBook.entrySet()) {
